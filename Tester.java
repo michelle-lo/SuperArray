@@ -9,6 +9,10 @@ public class Tester {
     print(a.get(0), "hewwo");
     a.add("goodbwye");
     print(a.get(1), "goodbwye");
+    System.out.println("----set----");
+    a.add("yes");
+    print(a.set(2, "no"), "yes");
+    print(a.get(2), "no");
 
   }
 
