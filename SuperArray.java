@@ -1,16 +1,5 @@
-/*
-g)
-private void resize()
--Increase the capacity by :
-creating a larger array
-copy the values from the original array to the new one.
-assign the new one to the instance variable.
-
-Modify part d)
-public boolean add(String element)
--Appends the specified element to the end of this list.
--When the capacity is full, resize before adding.
-*/
+//Hw14
+//November 3rd, 2020javac
 public class SuperArray {
   private String[] data;
   private int size;
