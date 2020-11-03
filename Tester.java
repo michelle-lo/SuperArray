@@ -1,12 +1,14 @@
-import java.util.Arrays;
-
 public class Tester {
   public static void main (String[] args) {
-    SuperArray words = new SuperArray();
+    SuperArray a = new SuperArray();
     System.out.println("----size----");
-    print(words.size(), 0);
+    print(a.size(), 0);
     System.out.println("----add----");
-    print(words.add("hewwo"), true);
+    print(a.add("hewwo"), true);
+    System.out.println("----get----");
+    print(a.get(0), "hewwo");
+    a.add("goodbwye");
+    print(a.get(1), "goodbwye");
 
   }
 
