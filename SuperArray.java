@@ -43,9 +43,17 @@ public class SuperArray {
     data = new String[10];
     size = 0;
   }
+
   //Returns the number of elements in this list.
   public int size() {
     return size;
-
   }
+
+  //Appends the specified element to the end of this list.
+  public boolean add(String element) {
+    data[size] = element;
+    size++;
+    return true;
+  }
+
 }
