@@ -61,7 +61,19 @@ public class SuperArray {
   private void resize() {
     String[] newData = new String[data.length + 5];
     for (int i = 0; i < data.length; i++) {
-      add(data[i]);
+      newData[i] = data[i];
     }
+    data = newData;
+
+  }
+
+//for testing purposes
+  public String turnToString() {
+    String str = "";
+    for (int i = 0; i < data.length; i++) {
+      str += data[i];
+      str += ", ";
+    }
+    return str;
   }
 }

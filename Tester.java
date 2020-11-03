@@ -20,8 +20,16 @@ public class Tester {
     words.add("uni");
     words.add("ebi");
     for(int i = 0; i < words.size(); i++){
-      System.out.println( words.get(i) );
+      System.out.println(words.get(i) );
     }
+
+    System.out.println(words.turnToString());
+    for (int i = 0; i < 20; i++) {
+      words.add("yo");
+    }
+
+    System.out.println(words.turnToString());
+    System.out.println(words.size());
 
   }
 
@@ -37,6 +45,6 @@ public class Tester {
     System.out.println(str);
   }
 
-  
+
 
 }
