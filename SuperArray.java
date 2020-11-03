@@ -1,40 +1,16 @@
 /*
-Create a Repo SuperArray
-Create a class SuperArray which will contain:
+g)
+private void resize()
+-Increase the capacity by :
+creating a larger array
+copy the values from the original array to the new one.
+assign the new one to the instance variable.
 
-a)Instance Variables:
-private String [] data;
-private int size; //The current size
-
-b)Constructor:
--public SuperArray()
-  Creates an empty superArray.
-  Empty does NOT mean an empty capacity,
-  it means no elements are stored in it (the size is 0).
-  \A good starting capacity is 10.
-
-  Methods:
-  c)
-  public int size()
-  -Returns the number of elements in this list.
-
-  d)
-  public boolean add(String element)
-  -Appends the specified element to the end of this list.
-
-  e)
-  public String get(int index)
-  -Returns the element at the specified position in this list.
-  [For Now Assume the index is 0 to size-1]
-
-  f)
-  public String set(int index, String element)
-  -Replaces the element at the specified position in this list w
-  ith the specified element. Return the value you replaced.
-  [Assume the index is 0 to size-1] note: This is not to add new values,
-  it is only to replace old ones.
-  */
-
+Modify part d)
+public boolean add(String element)
+-Appends the specified element to the end of this list.
+-When the capacity is full, resize before adding.
+*/
 public class SuperArray {
   private String[] data;
   private int size;
@@ -51,6 +27,9 @@ public class SuperArray {
 
   //Appends the specified element to the end of this list.
   public boolean add(String element) {
+    if (size == data.length) {
+      resize();
+    }
     data[size] = element;
     size++;
     return true;
@@ -73,6 +52,16 @@ public class SuperArray {
     data[index] = element;
     return orig;
   }
-
-
+  /*
+  -Increase the capacity by :
+  creating a larger array
+  copy the values from the original array to the new one.
+  assign the new one to the instance variable.
+  */
+  private void resize() {
+    String[] newData = new String[data.length + 5];
+    for (int i = 0; i < data.length; i++) {
+      add(data[i]);
+    }
+  }
 }

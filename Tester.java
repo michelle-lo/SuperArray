@@ -13,6 +13,15 @@ public class Tester {
     a.add("yes");
     print(a.set(2, "no"), "yes");
     print(a.get(2), "no");
+    System.out.println("----...----");
+
+    SuperArray words = new SuperArray();
+    words.add("kani");
+    words.add("uni");
+    words.add("ebi");
+    for(int i = 0; i < words.size(); i++){
+      System.out.println( words.get(i) );
+    }
 
   }
 
@@ -28,5 +37,6 @@ public class Tester {
     System.out.println(str);
   }
 
+  
 
 }
