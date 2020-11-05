@@ -9,6 +9,12 @@ public class SuperArray {
     size = 0;
   }
 
+  //Create the SuperArray with the provided starting capacity.
+  public SuperArray(int initialCapacity) {
+      data = new String[initialCapacity];
+      size = 0;
+  }
+
   //Returns the number of elements in this list.
   public int size() {
     return size;
@@ -22,6 +28,29 @@ public class SuperArray {
     data[size] = element;
     size++;
     return true;
+  }
+
+  //Inserts the specified element at the specified position in this list.
+  //Shifts the element currently at that position (if any)
+  //and any subsequent elements to the right.
+  public void add(int index, String element) {
+    String[] newData = new String[data.length];
+    for (int i = 0; i < data.length; i++) {
+      System.out.println("i == index: " + (i == index));
+      if (i == index) {
+        newData[i] = element;
+        for (int j = index + 1; j < data.length; j++) {
+          newData[j] = data[j - 1];
+          System.out.println("j: " + j);
+          System.out.println("newData[j]: " + newData[j]);
+          System.out.println("data[j - 1]: " + data[j - 1]);
+          System.out.println(toString());
+        }
+      } else {
+        newData[i] = data[i];
+      }
+    }
+    data = newData;
   }
 
   //Returns the element at the specified position in this list.
@@ -75,14 +104,10 @@ public class SuperArray {
   //This only displays the elements that were added, not the empty spots
   public String toString() {
     String str = "[";
-    for (int i = 0; i < data.length; i++) {
-      if (data[i] != null) {
-        str += data[i];
-        if (data[i + 1] != null && i != data.length - 1) {
-          str += ", ";
-        }
-      } else {
-        i = data.length;
+    for (int i = 0; i < size(); i++) {
+      str += data[i];
+      if (i != size - 1) {
+        str += ", ";
       }
     }
     return str += "]";

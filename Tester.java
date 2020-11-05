@@ -39,6 +39,14 @@ public class Tester {
     System.out.println(words.turnToString());
     System.out.println(words.size());
 
+    SuperArray b = new SuperArray(4);
+    b.add("yes");
+    b.add("no");
+    b.add("maybe");
+    System.out.println(b.toString());
+    b.add(2, "hello");
+    print(b.toString(), "[yes, no, hello, maybe]");
+    System.out.println(b.turnToString());
   }
 
   public static void print (Object actual, Object expected) {
