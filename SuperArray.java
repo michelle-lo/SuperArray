@@ -52,6 +52,26 @@ public class SuperArray {
     data = newData;
   }
 
+  //Removes the element at the specified position in this list.
+  //Shifts any subsequent elements to the left.
+  //The returned value is the element you remove.
+  public String remove(int index) {
+    String[] newData = new String[data.length];
+    String orig = data[index];
+    for (int i = 0; i < size; i++) {
+      if (i < index) {
+        newData[i] = data[i];
+
+      } else {
+        newData[i] = data[i + 1];
+      }
+    }
+    data = newData;
+    size--;
+    return orig;
+  }
+
+
   //Returns the element at the specified position in this list.
   //[For Now Assume the index is 0 to size-1]
   public String get(int index) {
@@ -120,6 +140,8 @@ public class SuperArray {
     }
     return false;
   }
+
+
 
 //for testing purposes
   public String turnToString() {

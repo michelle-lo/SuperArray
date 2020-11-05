@@ -16,6 +16,12 @@ public class Tester {
     System.out.println("----clear----");
     a.clear();
     print(a.toString(), "[]");
+    print(a.size(), 0);
+    System.out.println("----isEmpty----");
+    SuperArray notEmpty = new SuperArray(2);
+    notEmpty.add("lol");
+    print(a.isEmpty(), true);
+    print(notEmpty.isEmpty(), false);
     System.out.println("----add(index, element)----");
     SuperArray b = new SuperArray(4);
     b.add("yes");
@@ -27,7 +33,12 @@ public class Tester {
     System.out.println(b.turnToString());
     b.add(2, "what's up");
     print(b.toString(), "[yes, no, what's up, hello, maybe]");
-
+    System.out.println("----remove----");
+    System.out.println("size: " + b.size());
+    b.remove(2);
+    print(b.toString(), "[yes, no, hello, maybe]");
+    print(b.size(), 4);
+    /*
     System.out.println("----...----");
 
     SuperArray words = new SuperArray();
@@ -53,6 +64,7 @@ public class Tester {
     System.out.println(words.toString());
     System.out.println(words.turnToString());
     System.out.println(words.size());
+    */
 
   }
 
