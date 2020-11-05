@@ -34,11 +34,11 @@ public class SuperArray {
   //Shifts the element currently at that position (if any)
   //and any subsequent elements to the right.
   public void add(int index, String element) {
-    String[] newData = new String[data.length];
     if (size == data.length) {
       resize();
     }
     size++;
+    String[] newData = new String[data.length];
 
     for (int i = 0; i < size; i++) {
       if (i < index) {
@@ -92,9 +92,8 @@ public class SuperArray {
   //Reset the SuperArray to be size 0 again.
   //There should be no references to any old values in the array.
   public void clear() {
-    for (int i = 0; i < data.length; i++) {
-      data[i] = null;
-    }
+    String[] newData = new String[data.length];
+    data = newData;
     size = 0;
   }
 

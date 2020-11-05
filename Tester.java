@@ -13,6 +13,21 @@ public class Tester {
     a.add("yes");
     print(a.set(2, "no"), "yes");
     print(a.get(2), "no");
+    System.out.println("----clear----");
+    a.clear();
+    print(a.toString(), "[]");
+    System.out.println("----add(index, element)----");
+    SuperArray b = new SuperArray(4);
+    b.add("yes");
+    b.add("no");
+    b.add("maybe");
+    System.out.println(b.toString());
+    b.add(2, "hello");
+    print(b.toString(), "[yes, no, hello, maybe]");
+    System.out.println(b.turnToString());
+    b.add(2, "what's up");
+    print(b.toString(), "[yes, no, what's up, hello, maybe]");
+
     System.out.println("----...----");
 
     SuperArray words = new SuperArray();
@@ -38,15 +53,7 @@ public class Tester {
     System.out.println(words.toString());
     System.out.println(words.turnToString());
     System.out.println(words.size());
-    System.out.println("----add(index, element)----");
-    SuperArray b = new SuperArray(4);
-    b.add("yes");
-    b.add("no");
-    b.add("maybe");
-    System.out.println(b.toString());
-    b.add(2, "hello");
-    print(b.toString(), "[yes, no, hello, maybe]");
-    System.out.println(b.turnToString());
+
   }
 
   public static void print (Object actual, Object expected) {
