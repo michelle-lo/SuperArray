@@ -5,6 +5,10 @@ public class Tester {
     print(a.size(), 0);
     System.out.println("----add----");
     print(a.add("hewwo"), true);
+    SuperArray nothing = new SuperArray();
+    nothing.add("haha");
+    print(nothing.toString(), "[haha]");
+    System.out.println(nothing.turnToString());
     System.out.println("----get----");
     print(a.get(0), "hewwo");
     a.add("goodbwye");
@@ -38,6 +42,14 @@ public class Tester {
     b.remove(2);
     print(b.toString(), "[yes, no, hello, maybe]");
     print(b.size(), 4);
+
+    a.remove(2);
+    print(a.toString(), "[]");
+    print(a.size(), 0);
+    System.out.println("----indexOf----");
+    print(b.indexOf("yes"), 0);
+    print(b.indexOf("hewwo"), -1);
+    print(a.indexOf("okay"), -1);
     /*
     System.out.println("----...----");
 

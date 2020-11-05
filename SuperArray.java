@@ -67,7 +67,9 @@ public class SuperArray {
       }
     }
     data = newData;
-    size--;
+    if (size > 0) {
+      size--;
+    }
     return orig;
   }
 
@@ -96,7 +98,7 @@ public class SuperArray {
   assign the new one to the instance variable.
   */
   private void resize() {
-    String[] newData = new String[data.length * 2]; //+ 1? to acc for 0 capacity
+    String[] newData = new String[data.length * 2 + 1]; //+ 1? to acc for 0 capacity
     for (int i = 0; i < data.length; i++) {
       newData[i] = data[i];
     }
@@ -140,8 +142,16 @@ public class SuperArray {
     }
     return false;
   }
-
-
+  //Returns the index of the first occurrence of the specified element
+  //in this list, or -1 if this list does not contain the element.
+  public int indexOf(String s) {
+    for (int i = 0; i < size(); i++) {
+      if (data[i].equals(s)) {
+        return i;
+      }
+    }
+    return -1;
+  }
 
 //for testing purposes
   public String turnToString() {
