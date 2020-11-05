@@ -35,19 +35,18 @@ public class SuperArray {
   //and any subsequent elements to the right.
   public void add(int index, String element) {
     String[] newData = new String[data.length];
-    for (int i = 0; i < data.length; i++) {
-      System.out.println("i == index: " + (i == index));
-      if (i == index) {
-        newData[i] = element;
-        for (int j = index + 1; j < data.length; j++) {
-          newData[j] = data[j - 1];
-          System.out.println("j: " + j);
-          System.out.println("newData[j]: " + newData[j]);
-          System.out.println("data[j - 1]: " + data[j - 1]);
-          System.out.println(toString());
-        }
-      } else {
+    if (size == data.length) {
+      resize();
+    }
+    size++;
+
+    for (int i = 0; i < size; i++) {
+      if (i < index) {
         newData[i] = data[i];
+      } else if (i == index) {
+        newData[i] = element;
+      } else {
+        newData[i] = data[i - 1];
       }
     }
     data = newData;

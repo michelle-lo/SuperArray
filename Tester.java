@@ -38,7 +38,7 @@ public class Tester {
     System.out.println(words.toString());
     System.out.println(words.turnToString());
     System.out.println(words.size());
-
+    System.out.println("----add(index, element)----");
     SuperArray b = new SuperArray(4);
     b.add("yes");
     b.add("no");
