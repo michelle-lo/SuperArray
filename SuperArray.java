@@ -56,17 +56,10 @@ public class SuperArray {
   //Shifts any subsequent elements to the left.
   //The returned value is the element you remove.
   public String remove(int index) {
-    String[] newData = new String[data.length];
     String orig = data[index];
-    for (int i = 0; i < size; i++) {
-      if (i < index) {
-        newData[i] = data[i];
-
-      } else {
-        newData[i] = data[i + 1];
-      }
+    for (int i = index; i < size - 1; i++) {
+        data[i] = data[i + 1];
     }
-    data = newData;
     if (size > 0) {
       size--;
     }
@@ -98,7 +91,7 @@ public class SuperArray {
   assign the new one to the instance variable.
   */
   private void resize() {
-    String[] newData = new String[data.length * 2 + 1]; //+ 1? to acc for 0 capacity
+    String[] newData = new String[data.length * 2 + 1]; 
     for (int i = 0; i < data.length; i++) {
       newData[i] = data[i];
     }
@@ -135,7 +128,7 @@ public class SuperArray {
 
   //Returns true if this list contains the specified element.
   public boolean contains(String s) {
-    for (int i = 0; i < data.length; i++) {
+    for (int i = 0; i < size; i++) {
       if (data[i].equals(s)) {
         return true;
       }
@@ -145,12 +138,23 @@ public class SuperArray {
   //Returns the index of the first occurrence of the specified element
   //in this list, or -1 if this list does not contain the element.
   public int indexOf(String s) {
-    for (int i = 0; i < size(); i++) {
+    for (int i = 0; i < size; i++) {
       if (data[i].equals(s)) {
         return i;
       }
     }
     return -1;
+  }
+  //Returns an array containing all of the elements in this list
+  //in proper sequence (from first to last element).
+  //The returned array will be "safe" in that no references to it
+  //are maintained by this list. (In other words, this method must allocate a new array).
+  public String[] toArray() {
+    String[] arr = new String[size];
+    for (int i = 0; i < size; i++) {
+      arr[i] = data[i];
+    }
+    return arr;
   }
 
 //for testing purposes

@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Tester {
   public static void main (String[] args) {
     SuperArray a = new SuperArray();
@@ -50,6 +52,12 @@ public class Tester {
     print(b.indexOf("yes"), 0);
     print(b.indexOf("hewwo"), -1);
     print(a.indexOf("okay"), -1);
+    System.out.println("----toArray----");
+    String[] arrA = a.toArray();
+    print(Arrays.toString(arrA), "[]");
+    String[] arrB = b.toArray();
+    print(Arrays.toString(arrB), "[yes, no, hello, maybe]");
+
     /*
     System.out.println("----...----");
 
