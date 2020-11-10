@@ -91,7 +91,7 @@ public class SuperArray {
   assign the new one to the instance variable.
   */
   private void resize() {
-    String[] newData = new String[data.length * 2 + 1]; 
+    String[] newData = new String[data.length * 2 + 1];
     for (int i = 0; i < data.length; i++) {
       newData[i] = data[i];
     }
@@ -155,6 +155,22 @@ public class SuperArray {
       arr[i] = data[i];
     }
     return arr;
+  }
+/*
+  Add these methods to your SuperArray:
+c) public int lastIndexOf(String value){ }
+d) public boolean equals(SuperArray other){ }
+SuperArrays are equal when all corresponding elements are equal. The capacity is NOT important.
+*/
+
+  public int lastIndexOf(String value){
+    int last = -1;
+    for (int i = 0; i < size; i++) {
+      if (data[i].equals(value)) {
+        last = i;
+      }
+    }
+    return last;
   }
 
 //for testing purposes

@@ -3,6 +3,7 @@ import java.util.Arrays;
 public class Tester {
   public static void main (String[] args) {
     SuperArray a = new SuperArray();
+    SuperArray empty = new SuperArray();
     System.out.println("----size----");
     print(a.size(), 0);
     System.out.println("----add----");
@@ -57,6 +58,14 @@ public class Tester {
     print(Arrays.toString(arrA), "[]");
     String[] arrB = b.toArray();
     print(Arrays.toString(arrB), "[yes, no, hello, maybe]");
+    System.out.println("----lastIndexOf----");
+    SuperArray c = new SuperArray();
+    c.add("heyo"); c.add("heyo"); c.add("heyo"); c.add("heyo"); c.add("heyo");
+    c.add("nah"); c.add("nah"); c.add("heyo"); c.add("nah");
+    print(c.lastIndexOf("heyo"), 7);
+    print(c.lastIndexOf("nah"), 8);
+    print(empty.lastIndexOf("nah"), -1);
+    print(empty.lastIndexOf("bruh"), -1);
 
     /*
     System.out.println("----...----");
