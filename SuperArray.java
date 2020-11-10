@@ -156,12 +156,6 @@ public class SuperArray {
     }
     return arr;
   }
-/*
-  Add these methods to your SuperArray:
-c) public int lastIndexOf(String value){ }
-d) public boolean equals(SuperArray other){ }
-SuperArrays are equal when all corresponding elements are equal. The capacity is NOT important.
-*/
 
   public int lastIndexOf(String value){
     int last = -1;
