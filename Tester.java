@@ -66,6 +66,21 @@ public class Tester {
     print(c.lastIndexOf("nah"), 8);
     print(empty.lastIndexOf("nah"), -1);
     print(empty.lastIndexOf("bruh"), -1);
+    System.out.println("----equals (SuperArray)----");
+    SuperArray e = new SuperArray();
+    e.add("si"); e.add("si"); e.add("si");
+    e.add("no"); e.add("no"); e.add("no");
+    SuperArray eToo = new SuperArray();
+    eToo.add("si"); eToo.add("si"); eToo.add("si");
+    eToo.add("no"); eToo.add("no"); eToo.add("no");
+    print(e.equals(eToo), true);
+    print(c.equals(e), false);
+    print(e.equals(c), false);
+    print(e.equals(empty), false);
+    print(a.equals(empty), true);
+    eToo.add("no");
+    print(e.equals(eToo), false);
+
 
     /*
     System.out.println("----...----");

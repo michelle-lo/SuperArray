@@ -173,6 +173,19 @@ SuperArrays are equal when all corresponding elements are equal. The capacity is
     return last;
   }
 
+//SuperArrays are equal when all corresponding elements are equal. The capacity is NOT important.
+  public boolean equals(SuperArray other){
+    if (size != other.size()) {
+      return false;
+    }
+    for (int i = 0; i < size; i++) {
+      if (data[i].equals(other.get(i)) == false) {
+        return false;
+      }
+    }
+    return true;
+  }
+
 //for testing purposes
   public String turnToString() {
     String str = "";
