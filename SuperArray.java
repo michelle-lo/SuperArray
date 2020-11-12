@@ -192,6 +192,8 @@ public class SuperArray {
     return true;
   }
 
+  //tests and throws exception when index is out of bounds (index is negative
+  //or is larger than the array size)
   public void outOfBounds(int index) {
     if (index < 0 || index >= size()) {
       throw new IndexOutOfBoundsException ("index value of "+ index + " is invalid.");
