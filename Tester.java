@@ -92,11 +92,22 @@ public class Tester {
       System.out.println("SuperArray: it's a negative number. nice try.");
     }
     System.out.println("----get index error----");
+    System.out.println(e.toString());
     try {
-        e.get(-1);
+        a.get(-1);
     } catch (IndexOutOfBoundsException err) {
       System.out.println("get(): index out of bounds");
     }
+    System.out.println("----set index error----");
+    System.out.println(e.toString());
+    try {
+      e.set(-1, "huh");
+    } catch (IndexOutOfBoundsException err){
+      System.out.println("set(): index out of bounds");
+    }
+    System.out.println(e.toString());
+
+
 
 
 

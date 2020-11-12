@@ -75,7 +75,7 @@ public class SuperArray {
   //[For Now Assume the index is 0 to size-1]
   public String get(int index) {
     if (index < 0 || index >= size()) {
-      throw new IndexOutOfBoundsException ("index value of "+ index +"is invalid.");
+      throw new IndexOutOfBoundsException ("index value of "+ index + "is invalid.");
     }
     return data[index];
   }
@@ -86,7 +86,11 @@ public class SuperArray {
   [Assume the index is 0 to size-1] note: This is not to add new values,
   it is only to replace old ones.
   */
+
   public String set(int index, String element) {
+    if (index < 0 || index >= size()) {
+      throw new IndexOutOfBoundsException("index value of "+ index + "is invalid.");
+    }
     String orig = data[index];
     data[index] = element;
     return orig;
