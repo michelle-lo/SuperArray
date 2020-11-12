@@ -11,8 +11,12 @@ public class SuperArray {
 
   //Create the SuperArray with the provided starting capacity.
   public SuperArray(int initialCapacity) {
-      data = new String[initialCapacity];
-      size = 0;
+    if (initialCapacity < 0) {
+      throw new IllegalArgumentException("initial capacity value of "
+                                          + initialCapacity + " not permitted. Must be >= 0");
+    }
+    data = new String[initialCapacity];
+    size = 0;
   }
 
   //Returns the number of elements in this list.
@@ -70,6 +74,9 @@ public class SuperArray {
   //Returns the element at the specified position in this list.
   //[For Now Assume the index is 0 to size-1]
   public String get(int index) {
+    if (index < 0 || index >= size()) {
+      throw new IndexOutOfBoundsException ("index value of "+ index +"is invalid.");
+    }
     return data[index];
   }
 
@@ -167,7 +174,8 @@ public class SuperArray {
     return last;
   }
 
-//SuperArrays are equal when all corresponding elements are equal. The capacity is NOT important.
+//SuperArrays are equal when all corresponding elements are equal.
+//The capacity is NOT important.
   public boolean equals(SuperArray other){
     if (size != other.size()) {
       return false;

@@ -80,35 +80,27 @@ public class Tester {
     print(a.equals(empty), true);
     eToo.add("no");
     print(e.equals(eToo), false);
-
-
-    /*
-    System.out.println("----...----");
-
-    SuperArray words = new SuperArray();
-    words.add("kani");
-    words.add("uni");
-    words.add("ebi");
-    for(int i = 0; i < words.size(); i++){
-      System.out.println(words.get(i) );
+    System.out.println("----SuperArray(initialCapacity)----");
+    try {
+      SuperArray err = new SuperArray(2);
+    } catch (IllegalArgumentException neg) {
+      System.out.print("this shouldn't happen");
+    }
+    try {
+      SuperArray negArray = new SuperArray(-1);
+    } catch (IllegalArgumentException neg) {
+      System.out.println("SuperArray: it's a negative number. nice try.");
+    }
+    System.out.println("----get index error----");
+    try {
+        e.get(-1);
+    } catch (IndexOutOfBoundsException err) {
+      System.out.println("get(): index out of bounds");
     }
 
-    System.out.println(words.turnToString());
-    for (int i = 0; i < 20; i++) {
-      words.add("yo");
-    }
 
-    System.out.println(words.turnToString());
-    System.out.println(words.size());
 
-    System.out.println(words.toString());
 
-    System.out.println(words.contains("yo"));
-    words.clear();
-    System.out.println(words.toString());
-    System.out.println(words.turnToString());
-    System.out.println(words.size());
-    */
 
   }
 
