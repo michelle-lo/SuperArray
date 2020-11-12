@@ -98,7 +98,6 @@ public class Tester {
     } catch (IndexOutOfBoundsException err) {
       System.out.println("get(): index out of bounds");
     }
-    System.out.println("----set index error----");
     System.out.println(e.toString());
     try {
       e.set(-1, "huh");
@@ -106,6 +105,14 @@ public class Tester {
       System.out.println("set(): index out of bounds");
     }
     System.out.println(e.toString());
+    System.out.println("----add(index, element) error----");
+    try {
+      e.set(6, "bwahahah");
+    } catch (IndexOutOfBoundsException err) {
+      System.out.println("add: index out of bounds");
+    }
+
+
 
 
 

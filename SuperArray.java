@@ -37,7 +37,10 @@ public class SuperArray {
   //Inserts the specified element at the specified position in this list.
   //Shifts the element currently at that position (if any)
   //and any subsequent elements to the right.
-  public void add(int index, String element) {
+  public void add(int index, String  element) {
+    if (index < 0 || index > size()) {
+      throw new IndexOutOfBoundsException("index value of "+ index + "is invalid.");
+    }
     if (size == data.length) {
       resize();
     }
@@ -74,9 +77,7 @@ public class SuperArray {
   //Returns the element at the specified position in this list.
   //[For Now Assume the index is 0 to size-1]
   public String get(int index) {
-    if (index < 0 || index >= size()) {
-      throw new IndexOutOfBoundsException ("index value of "+ index + "is invalid.");
-    }
+    outOfBounds(index);
     return data[index];
   }
 
@@ -88,9 +89,7 @@ public class SuperArray {
   */
 
   public String set(int index, String element) {
-    if (index < 0 || index >= size()) {
-      throw new IndexOutOfBoundsException("index value of "+ index + "is invalid.");
-    }
+    outOfBounds(index);
     String orig = data[index];
     data[index] = element;
     return orig;
@@ -190,6 +189,12 @@ public class SuperArray {
       }
     }
     return true;
+  }
+
+  public void outOfBounds(int index) {
+    if (index < 0 || index >= size()) {
+      throw new IndexOutOfBoundsException ("index value of "+ index + "is invalid.");
+    }
   }
 
 //for testing purposes
