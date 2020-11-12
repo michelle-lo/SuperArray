@@ -63,6 +63,7 @@ public class SuperArray {
   //Shifts any subsequent elements to the left.
   //The returned value is the element you remove.
   public String remove(int index) {
+    outOfBounds(index);
     String orig = data[index];
     for (int i = index; i < size - 1; i++) {
         data[i] = data[i + 1];

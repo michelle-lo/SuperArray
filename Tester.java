@@ -45,8 +45,7 @@ public class Tester {
     b.remove(2);
     print(b.toString(), "[yes, no, hello, maybe]");
     print(b.size(), 4);
-
-    a.remove(2);
+    System.out.println(a.toString());
     print(a.toString(), "[]");
     print(a.size(), 0);
     System.out.println("----indexOf----");
@@ -111,14 +110,12 @@ public class Tester {
     } catch (IndexOutOfBoundsException err) {
       System.out.println("add: index out of bounds");
     }
-
-
-
-
-
-
-
-
+    System.out.println("----remove error----");
+    try {
+      e.remove(1000);
+    } catch (IndexOutOfBoundsException err) {
+      System.out.println("remove: index out of bounds");
+    }
 
   }
 
