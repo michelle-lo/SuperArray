@@ -194,7 +194,7 @@ public class SuperArray {
 
   public void outOfBounds(int index) {
     if (index < 0 || index >= size()) {
-      throw new IndexOutOfBoundsException ("index value of "+ index + "is invalid.");
+      throw new IndexOutOfBoundsException ("index value of "+ index + " is invalid.");
     }
   }
 
